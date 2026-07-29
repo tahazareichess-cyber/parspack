@@ -1331,17 +1331,10 @@ body,html{
 .hidden {
   display: none;
 }
-.navbar{
-    display:none;
-}
-.banner{
-    display:none;
-}
 
 /* mobile version */
 .mobile-banner{
     background:rgb(38, 40, 53);
-    display:flex;
     justify-content:center;
     align-items:center;
     width:100%;
@@ -1824,10 +1817,39 @@ body,html{
 body.menu-open{
     overflow:hidden;
 }
+.mobile-banner,
+.mobile-navbar,
+.mobile-menu,
+.overlay{
+    display:none;
+}
 /* ===========================
    MOBILE
 =========================== */
+@media (max-width:767px){
 
+    /* Hide desktop */
+    .banner,
+    .navbar,
+    .products-container{
+        display:none !important;
+    }
+
+    /* Show mobile */
+    .mobile-banner,
+    .mobile-navbar{
+        display:flex;
+    }
+
+    .mobile-menu{
+        display:flex;
+    }
+
+    .overlay{
+        display:block;
+    }
+
+}
 @media(min-width:768px) and (max-width:1024px){
 
 
