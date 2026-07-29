@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <title>parspack</title>
+</head>
+<body>
+
+  <!-- بنر -->
+  <header>
+    <div class="container">
+      <div class="banner">
+        <a href="#"><img src="banner-topbar-desk-041218.jpg" alt="topbar banner" /></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ناوبار -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-right">
+        <div class="nav-logo">
+          <a href="index.html"><img src="pars pack logo.png" alt="logo of the site" /></a>
+        </div>
+
+        <ul>
+          <li class="has-dropdown">
+            <a href="#" id="products-link">
+              محصولات
+              <ion-icon id="arrow" name="chevron-down-outline"></ion-icon>
+            </a>
+          </li>
+          <li><a href="#">خرید هاست</a></li>
+          <li><a href="#">خرید سرور</a></li>
+          <li><a href="#">خرید دامنه</a></li>
+          <li><a href="#">وبلاگ</a></li>
+          <li><a href="#">مستندات</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-left">
+        <a class="callus-btn" href="#">
+          تلفن تماس
+          <span class="icon"><ion-icon name="call"></ion-icon></span>
+        </a>
+        <a class="enter-btn" href="#">ورود به پنل</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- مگا منو -->
+  <div class="products-container" id="products-dropdown">
+
+    <aside class="sidebar">
+      <div class="sidebar-item active" data-drawer="drawer-all-products">
+        <div class="sidebar-icon">
+          <ion-icon name="basket-outline"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>همه محصولات پارس پک</h3>
+          <p>لیست محصولات و خدمات پارس پک</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="sidebar-item" data-drawer="drawer-cloud">
+        <div class="sidebar-icon">
+          <ion-icon name="cloud-outline"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>زیرساخت و پلتفرم ابری</h3>
+          <p>بستر سرویس‌های مدرن و مقیاس پذیر</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="sidebar-item" data-drawer="drawer-wordpress">
+        <div class="sidebar-icon">
+          <ion-icon name="logo-wordpress"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>مناسب وردپرس</h3>
+          <p>بهینه شده برای سایت‌های وردپرسی</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="sidebar-item" data-drawer="drawer-documents">
+        <div class="sidebar-icon">
+          <ion-icon name="book-outline"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>دانشنامه و داکیومنت‌ها</h3>
+          <p>هر آنچه برای یادگیری نیاز دارید</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </aside>
+
+    <section class="drawer-container">
+
+      <!-- ALL PRODUCTS -->
+      <section class="drawer active" id="drawer-all-products">
+
+        <div class="menu-column">
+          <div class="menu-item has-submenu" data-submenu="submenu-server">
+            <span>خرید سرور</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-host">
+            <span>خرید هاست</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-domain">
+            <span>خرید دامنه</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-cdn">
+            <span>خرید CDN</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-ssl">
+            <span>خرید SSL</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-storage">
+            <span>خرید فضای ابری</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-services">
+            <span>سایر خدمات</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="submenu-column">
+          <div class="submenu active" id="submenu-server">
+            <div class="submenu-item" data-submenu="submenu-dedicated">
+              <span>سرور اختصاصی</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+
+            <div class="submenu-item" data-submenu="submenu-vps">
+              <span>سرور مجازی</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+
+            <div class="submenu-item">
+              <span>سرور ابری</span>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-host">
+            <div class="submenu-item">هاست ابری</div>
+            <div class="submenu-item">هاست لینوکس</div>
+            <div class="submenu-item">هاست وردپرس</div>
+            <div class="submenu-item">هاست دانلود</div>
+            <div class="submenu-item">هاست ایران</div>
+            <div class="submenu-item">هاست اختصاصی</div>
+            <div class="submenu-item">هاست نمایندگی</div>
+          </div>
+
+          <div class="submenu" id="submenu-domain">
+            <div class="submenu-item">خرید دامنه ir</div>
+            <div class="submenu-item">خرید دامنه com</div>
+          </div>
+
+          <div class="submenu" id="submenu-cdn">
+            <div class="product-card">
+              <img src="buy server img.jpg" alt="cdn" />
+              <h4>CDN</h4>
+              <p>cdn چیست و چرا باید از آن استفاده کنیم؟</p>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-ssl">
+            <div class="product-card">
+              <img src="cloud img.jpg" alt="ssl" />
+              <h4>SSL</h4>
+              <p>SSL چیست و چرا ضروری است؟</p>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-storage">
+            <div class="product-card">
+              <img src="cloud img.jpg" alt="storage" />
+              <h4>فضای ابری</h4>
+              <p>فضای ابری چیست؟</p>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-services">
+            <div class="submenu-item">خرید PaaS</div>
+            <div class="submenu-item">خرید ابر خصوصی</div>
+            <div class="submenu-item">کلاستر دیتابیس</div>
+            <div class="submenu-item">ایمیل سازمانی</div>
+            <div class="submenu-item">فضای دیتاسنتر</div>
+            <div class="submenu-item">مستندات</div>
+          </div>
+        </div>
+
+      </section>
+      <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="test.css" />
+  <title>parspack</title>
+</head>
+<body>
+
+  <!-- بنر -->
+  <header>
+    <div class="container">
+      <div class="banner">
+        <a href="#"><img src="banner-topbar-desk-041218.jpg" alt="topbar banner" /></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ناوبار -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-right">
+        <div class="nav-logo">
+          <a href="index.html"><img src="pars pack logo.png" alt="logo of the site" /></a>
+        </div>
+
+        <ul>
+          <li class="has-dropdown">
+            <a href="#" id="products-link">
+              محصولات
+              <ion-icon id="arrow" name="chevron-down-outline"></ion-icon>
+            </a>
+          </li>
+          <li><a href="#">خرید هاست</a></li>
+          <li><a href="#">خرید سرور</a></li>
+          <li><a href="#">خرید دامنه</a></li>
+          <li><a href="#">وبلاگ</a></li>
+          <li><a href="#">مستندات</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-left">
+        <a class="callus-btn" href="#">
+          تلفن تماس
+          <span class="icon"><ion-icon name="call"></ion-icon></span>
+        </a>
+        <a class="enter-btn" href="#">ورود به پنل</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- مگا منو -->
+  <div class="products-container" id="products-dropdown">
+
+    <aside class="sidebar">
+      <div class="sidebar-item active" data-drawer="drawer-all-products">
+        <div class="sidebar-icon">
+          <ion-icon name="basket-outline"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>همه محصولات پارس پک</h3>
+          <p>لیست محصولات و خدمات پارس پک</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="sidebar-item" data-drawer="drawer-cloud">
+        <div class="sidebar-icon">
+          <ion-icon name="cloud-outline"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>زیرساخت و پلتفرم ابری</h3>
+          <p>بستر سرویس‌های مدرن و مقیاس پذیر</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="sidebar-item" data-drawer="drawer-wordpress">
+        <div class="sidebar-icon">
+          <ion-icon name="logo-wordpress"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>مناسب وردپرس</h3>
+          <p>بهینه شده برای سایت‌های وردپرسی</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="sidebar-item" data-drawer="drawer-documents">
+        <div class="sidebar-icon">
+          <ion-icon name="book-outline"></ion-icon>
+        </div>
+        <div class="sidebar-text">
+          <h3>دانشنامه و داکیومنت‌ها</h3>
+          <p>هر آنچه برای یادگیری نیاز دارید</p>
+        </div>
+        <div class="sidebar-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </aside>
+
+    <section class="drawer-container">
+
+      <!-- ALL PRODUCTS -->
+      <section class="drawer active" id="drawer-all-products">
+
+        <div class="menu-column">
+          <div class="menu-item has-submenu" data-submenu="submenu-server">
+            <span>خرید سرور</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-host">
+            <span>خرید هاست</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-domain">
+            <span>خرید دامنه</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-cdn">
+            <span>خرید CDN</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-ssl">
+            <span>خرید SSL</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-storage">
+            <span>خرید فضای ابری</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+
+          <div class="menu-item has-submenu" data-submenu="submenu-services">
+            <span>سایر خدمات</span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="submenu-column">
+          <div class="submenu active" id="submenu-server">
+            <div class="submenu-item" data-submenu="submenu-dedicated">
+              <span>سرور اختصاصی</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+
+            <div class="submenu-item" data-submenu="submenu-vps">
+              <span>سرور مجازی</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+
+            <div class="submenu-item">
+              <span>سرور ابری</span>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-host">
+            <div class="submenu-item">هاست ابری</div>
+            <div class="submenu-item">هاست لینوکس</div>
+            <div class="submenu-item">هاست وردپرس</div>
+            <div class="submenu-item">هاست دانلود</div>
+            <div class="submenu-item">هاست ایران</div>
+            <div class="submenu-item">هاست اختصاصی</div>
+            <div class="submenu-item">هاست نمایندگی</div>
+          </div>
+
+          <div class="submenu" id="submenu-domain">
+            <div class="submenu-item">خرید دامنه ir</div>
+            <div class="submenu-item">خرید دامنه com</div>
+          </div>
+
+          <div class="submenu" id="submenu-cdn">
+            <div class="product-card">
+              <img src="buy server img.jpg" alt="cdn" />
+              <h4>CDN</h4>
+              <p>cdn چیست و چرا باید از آن استفاده کنیم؟</p>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-ssl">
+            <div class="product-card">
+              <img src="cloud img.jpg" alt="ssl" />
+              <h4>SSL</h4>
+              <p>SSL چیست و چرا ضروری است؟</p>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-storage">
+            <div class="product-card">
+              <img src="cloud img.jpg" alt="storage" />
+              <h4>فضای ابری</h4>
+              <p>فضای ابری چیست؟</p>
+            </div>
+          </div>
+
+          <div class="submenu" id="submenu-services">
+            <div class="submenu-item">خرید PaaS</div>
+            <div class="submenu-item">خرید ابر خصوصی</div>
+            <div class="submenu-item">کلاستر دیتابیس</div>
+            <div class="submenu-item">ایمیل سازمانی</div>
+            <div class="submenu-item">فضای دیتاسنتر</div>
+            <div class="submenu-item">مستندات</div>
+          </div>
+        </div>
+
+      </section>
+            <!-- ========================= -->
+      <!-- DOCUMENTS DRAWER -->
+      <!-- ========================= -->
+
+      <section class="drawer" id="drawer-documents">
+
+        <!-- Blog -->
+        <div class="content-box">
+
+          <div class="content-header">
+            <span>بلاگ پارس پک</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+
+          <h4>پربازدیدترین های بلاگ</h4>
+
+          <div class="content-list">
+            <a href="#">سریع ترین روش ها برای افزایش سرعت وردپرس</a>
+            <a href="#">راهنمای خرید هاست و دامنه؛ خانه اینترنتی خود را بسازید</a>
+            <a href="#">آموزش اتصال به سرور مجازی ویندوز</a>
+            <a href="#">همه چیز درباره انواع خطای SSL</a>
+            <a href="#">راهکارهای رفع خطای عدم اتصال به سرور</a>
+          </div>
+
+        </div>
+
+        <!-- Documents -->
+        <div class="content-box">
+
+          <div class="content-header">
+            <span>مستندات پارس پک</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+
+          <h4>کاربردی ترین های مستندات</h4>
+
+          <div class="content-list">
+            <a href="#">مستندات API سرور ابری</a>
+            <a href="#">اتصال دامنه به هاست دانلود</a>
+            <a href="#">تهیه بکاپ از هاست ابری</a>
+            <a href="#">مدیریت آبجکت ها</a>
+            <a href="#">Secret / Config در سرویس PaaS</a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+    <!-- End drawer-container -->
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <div class="mega-footer">
+
+      <div class="footer-content">
+        <h3>صعود با ابر پارس پک</h3>
+        <p>
+          با زیرساخت ابری پارس پک آسوده خاطر بر رشد و توسعه کسب و کار خود تمرکز کنید.
+        </p>
+      </div>
+
+      <button class="footer-btn">
+        <ion-icon name="arrow-undo-outline"></ion-icon>
+        خدمات پارس پک در یک نگاه
+      </button>
+
+    </div>
+
+  </div>
+  <!-- End products-container -->
+
+
+  <script src="index.js"></script>
+
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js">
+  </script>
+
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js">
+  </script>
+
+</body>
+</html>
