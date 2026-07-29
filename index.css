@@ -1332,6 +1332,7 @@ body,html{
   display: none;
 }
 
+
 /* mobile version */
 .mobile-banner{
     background:rgb(38, 40, 53);
@@ -1824,8 +1825,9 @@ body.menu-open{
     display:none;
 }
 /* ===========================
-   MOBILE
+   MOBILE (0px - 767px)
 =========================== */
+
 @media (max-width:767px){
 
     /* Hide desktop */
@@ -1837,10 +1839,7 @@ body.menu-open{
 
     /* Show mobile */
     .mobile-banner,
-    .mobile-navbar{
-        display:flex;
-    }
-
+    .mobile-navbar,
     .mobile-menu{
         display:flex;
     }
@@ -1849,17 +1848,14 @@ body.menu-open{
         display:block;
     }
 
-}
-@media(min-width:768px) and (max-width:1024px){
-
-
-    .wordpress-card{
-        width:90%;
-        margin:auto;
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
     }
 
-}
-@media (max-width:767px){
+    /* WordPress Cards */
 
     .wordpress-hosts{
         padding:14px;
@@ -1896,22 +1892,92 @@ body.menu-open{
         width:38px;
         height:38px;
     }
+
 }
-@media (max-width: 767px) {
-  .navbar,
-  .products-container {
-    display: none !important;
-  }
 
-  .mobile-banner,
-  .mobile-navbar {
-    display: flex;
-  }
+/* ===========================
+   TABLET (768px - 1024px)
+=========================== */
 
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-  }
+@media (min-width:768px){
+
+    /* Show desktop */
+    .banner,
+    .navbar,
+    .products-container{
+        display:none ;
+    }
+
+    /* Hide mobile */
+    .mobile-banner,
+    .mobile-navbar,
+    .mobile-menu,
+    .overlay{
+        display:flex;
+    }
+
+    html,
+    body{
+        overflow-x:hidden;
+    }
+
+    .nav-container{
+        max-width:100%;
+        padding:0 20px;
+    }
+
+    .nav-right{
+        gap:30px;
+    }
+
+    .navbar ul{
+        gap:15px;
+    }
+
+    .nav-logo img{
+        width:120px;
+    }
+
+    .callus-btn,
+    .enter-btn{
+        padding:10px 16px;
+        font-size:15px;
+    }
+
+    .wordpress-hosts{
+        padding:20px;
+    }
+
+    .wordpress-card{
+        width:90%;
+        margin:auto;
+    }
+
+}
+
+/* ===========================
+   DESKTOP (1025px+)
+=========================== */
+
+@media (min-width:1025px){
+
+    .banner{
+        display:block;
+    }
+
+    .navbar{
+        display:block;
+    }
+
+    .products-container{
+        display:flex;
+    }
+
+    .mobile-banner,
+    .mobile-navbar,
+    .mobile-menu,
+    .overlay{
+        display:none;
+    }
+
 }
