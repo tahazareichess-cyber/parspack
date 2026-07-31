@@ -1,3 +1,6 @@
+function initHeroCarousel() {
+
+
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".carousel-slide");
 const dots = document.querySelectorAll(".carousel-controls span");
@@ -229,3 +232,4 @@ window.addEventListener("resize",()=>{
     `translateX(-${slideWidth()*currentIndex}px)`;
 
 });
+}

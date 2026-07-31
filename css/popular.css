@@ -1,0 +1,383 @@
+.most-popular{
+    margin-top:100px;
+}
+
+.popular-wrapper{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    overflow:hidden;
+}
+
+.popular-content{
+    text-align:center;
+}
+
+.popular-content p{
+    margin-top:10px;
+}
+.popular-slider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+.popular-viewport{
+    overflow:hidden;
+    width:100%;
+    direction:ltr;
+}
+.popular-grid{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    width:max-content;
+    padding:20px 10px;
+    transition:transform .45s ease;
+    will-change:transform;
+    cursor:grab;
+    user-select:none;
+    direction:rtl;
+
+}
+.popular-grid.dragging{
+    cursor:grabbing;
+}
+.popular-card:hover{
+    background-color:rgb(224, 224, 224);
+    cursor: pointer;
+}
+.popular-card{
+    flex:0 0 320px;
+    height:400px;
+    background:white;
+    border-radius:10px;
+    box-shadow:1px 1px 10px rgba(0,0,0,.1);
+    text-align:center;
+    overflow:hidden;
+    transition:.5s;
+}
+
+
+.card-image{
+    height:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.card-image img{
+    max-width:80%;
+    max-height:150px;
+    object-fit:contain;
+    user-select:none;
+    -webkit-user-drag:none;
+    pointer-events:none;
+}
+
+
+.card-content{
+    padding:20px;
+}
+ .offers{
+    width:150px;
+    height:35px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:0 auto;
+
+    border-radius:8px;
+    font-size:12px;
+    gap:15px;
+    font-weight: 700;
+}
+.offers p{
+    margin:0;
+    text-align:center;
+}
+.offers.star{
+    background-color:rgba(59, 199, 134, 0.534);
+    color:rgb(0, 146, 78);
+    
+}
+.offers.off{
+
+    background-color:rgba(0, 81, 255, 0.534);
+    color:rgb(4, 104, 255);
+}
+.offers.fire{
+
+    background-color:rgba(255, 145, 0, 0.534);
+    color:rgb(170, 96, 0);
+}
+.offers.check-round{
+
+    background-color:rgba(29, 173, 161, 0.534);
+    color:rgb(14, 138, 127);
+}
+.offers span ion-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.popular-btn{
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:10%;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+    color:#333;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+
+    transition:all .3s ease;
+
+    flex-shrink:0;
+}
+
+
+.popular-btn ion-icon{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* hover effect */
+
+.popular-btn:hover{
+
+    background:#0ea5e9;
+
+    color:white;
+
+    transform:scale(1.08);
+
+}
+
+.popular-grid.dragging{
+    cursor: grabbing;
+}
+.popular-grid{
+    cursor:grab;
+    touch-action:none;
+}
+/* ===========================
+   LARGE DESKTOP (1200px+)
+=========================== */
+
+@media (min-width:1200px){
+
+    .popular-wrapper{
+        max-width:1200px;
+    }
+
+    .popular-card{
+        flex:0 0 320px;
+    }
+
+}
+
+
+/* ===========================
+   LAPTOP (992px - 1199px)
+=========================== */
+
+@media (max-width:1199px){
+
+    .most-popular{
+        margin-top:80px;
+    }
+
+    .popular-wrapper{
+        padding:0 30px;
+    }
+
+    .popular-card{
+        flex:0 0 300px;
+        height:390px;
+    }
+
+    .card-image{
+        height:160px;
+    }
+
+    .popular-btn{
+        width:45px;
+        height:45px;
+        font-size:20px;
+    }
+
+}
+
+
+
+/* ===========================
+   TABLET (768px - 991px)
+=========================== */
+
+@media (max-width:991px){
+
+    .most-popular{
+        margin-top:60px;
+    }
+
+
+    .popular-wrapper{
+        padding:0 20px;
+    }
+
+
+    .popular-content h1{
+        font-size:28px;
+    }
+
+
+    .popular-content p{
+        font-size:15px;
+    }
+
+
+    .popular-slider{
+        gap:10px;
+    }
+
+
+    .popular-card{
+        flex:0 0 270px;
+        height:380px;
+    }
+
+
+    .card-image{
+        height:150px;
+    }
+
+
+    .card-content{
+        padding:15px;
+    }
+
+
+    .card-content h2{
+        font-size:20px;
+    }
+
+
+    .popular-text{
+        font-size:14px;
+    }
+
+
+    .popular-btn{
+        width:40px;
+        height:40px;
+        font-size:18px;
+    }
+
+}
+
+
+
+/* ===========================
+   MOBILE (0px - 767px)
+=========================== */
+
+@media (max-width:767px){
+
+
+    .most-popular{
+        margin-top:40px;
+    }
+
+
+    .popular-wrapper{
+        padding:0 15px;
+    }
+
+
+    .popular-content h1{
+        font-size:22px;
+        line-height:1.6;
+    }
+
+
+    .popular-content p{
+        font-size:14px;
+    }
+
+
+    .popular-slider{
+        gap:0;
+    }
+
+
+    .popular-viewport{
+        width:100%;
+    }
+
+
+    .popular-card{
+        flex:0 0 260px;
+        height:360px;
+    }
+
+
+    .card-image{
+        height:130px;
+    }
+
+
+    .card-image img{
+        max-height:120px;
+    }
+
+
+    .card-content{
+        padding:12px;
+    }
+
+
+    .card-content h2{
+        font-size:18px;
+    }
+
+
+    .offers{
+        width:130px;
+        height:32px;
+        font-size:11px;
+    }
+
+
+    .popular-text{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+
+    /* Hide arrows on mobile */
+    .popular-btn{
+        font-size: 10px;
+        width:20px;
+        height:20px;
+    }
+
+}

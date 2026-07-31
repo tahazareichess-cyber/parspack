@@ -7,9 +7,12 @@ async function loadComponent(id, file) {
     }
 
     const html = await response.text();
-
     document.getElementById(id).innerHTML = html;
 }
 
-loadComponent("navbar", "components/navbar.html");
-loadComponent("hero", "components/hero.html");
+(async () => {
+    await loadComponent("hero", "hero/hero.html");
+
+    // Hero HTML now exists
+    initHeroCarousel();
+})();

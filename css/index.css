@@ -5,7 +5,7 @@
 }
 body,html{
     font-family: "Vazirmatn", sans-serif;
-    background:#fdc7c7;
+    background:#f1f1f1d0;
     color:#222;
     overflow-x:hidden;
     width:100%;
@@ -165,7 +165,7 @@ body,html{
     overflow:hidden;
     width:1090px;
     height:600px;
-
+    z-index: 1000;
     background:rgb(255, 255, 255);
     border-radius:20px;
     box-shadow:0 15px 40px rgba(0,0,0,.15);
