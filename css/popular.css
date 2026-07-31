@@ -74,11 +74,13 @@
     user-select:none;
     -webkit-user-drag:none;
     pointer-events:none;
+    margin-top: 30px;
 }
 
 
 .card-content{
     padding:20px;
+    margin-top: 40px;
 }
  .offers{
     width:150px;
@@ -94,6 +96,7 @@
     font-size:12px;
     gap:15px;
     font-weight: 700;
+    margin-top: 10px;
 }
 .offers p{
     margin:0;
@@ -123,6 +126,10 @@
     display:flex;
     align-items:center;
     justify-content:center;
+}
+.popular-text{
+    
+    margin-top: 20px;
 }
 .popular-btn{
 
