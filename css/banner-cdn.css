@@ -1,0 +1,128 @@
+.banner-cdn{
+     background: linear-gradient(90deg,rgb(13, 12, 68), rgb(0, 0, 216));
+     display:flex;
+     align-items: center;
+     justify-content:center;
+     color:white;
+    max-width:1200px;
+    margin:100px auto 30px;
+    padding:0 30px;
+     margin-bottom: 30px;
+     border-radius: 10px;
+     margin-top: 100px;
+     height:140px;
+}
+.banner-cdn-image{
+    margin-left: auto;
+}
+.banner-cdn-content{
+    margin:auto;
+}
+.banner-cdn-a a {
+     display:flex;
+     align-items: center;
+     justify-content:center;
+    text-decoration: none;
+    color: black;
+    background-color:rgb(230, 170, 39);
+    padding:5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    width:100%;
+}
+.banner-cdn-a ion-icon{
+     display:flex;
+     align-items: center;
+     justify-content:center;
+}
+/* ==========================
+   Laptop (1024px - 1200px)
+========================== */
+
+@media (max-width:1200px){
+
+    .banner-cdn{
+        margin:100px 20px 30px;
+        padding:0 20px;
+    }
+
+    .banner-cdn-content h1{
+        font-size:28px;
+    }
+
+    .banner-cdn-image img{
+        width:320px;
+    }
+
+}
+
+
+/* ==========================
+   Tablet (768px - 1023px)
+========================== */
+
+@media (max-width:1023px){
+
+    .banner-cdn{
+        height:auto;
+        padding:30px 25px;
+        gap:30px;
+    }
+
+    .banner-cdn-content h1{
+        font-size:24px;
+    }
+
+    .banner-cdn-image img{
+        width:250px;
+    }
+
+}
+
+
+/* ==========================
+   Mobile (0px - 767px)
+========================== */
+
+@media (max-width:767px){
+
+    .banner-cdn{
+        flex-direction:column;
+        text-align:center;
+        height:auto;
+        padding:30px 20px;
+        gap:20px;
+    }
+
+    .banner-cdn-content{
+        order:1;
+    }
+
+    .banner-cdn-image{
+        order:2;
+
+        /* Remove desktop margin */
+        margin-left:0;
+
+        /* Center it */
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+    }
+
+    .banner-cdn-image img{
+        display:block;
+        margin:0 auto;
+        max-width:220px;
+        width:100%;
+        height:auto;
+    }
+
+    .banner-cdn-a{
+        order:3;
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+}

@@ -1,0 +1,42 @@
+.server-host-a{
+    display:flex;
+    justify-content:center;
+    margin-bottom:50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.server-host-card{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:15px;
+
+    width:max-content;
+    max-width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+
+    cursor:grab;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+.server-host-card::-webkit-scrollbar{
+    display:none;
+}
+
+.server-host-card a{
+    flex:0 0 auto;
+    text-decoration:none;
+    background-color:rgba(255, 255, 255, 0.356);
+    border:1px solid rgba(90, 90, 90, 0.349);
+    border-radius:5px;
+    color:black;
+    padding:4px 10px;
+    white-space:nowrap;
+
+}

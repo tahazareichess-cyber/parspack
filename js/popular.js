@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initPopularSlider() {
 
     const viewport = document.querySelector(".popular-viewport");
     const track = document.querySelector(".popular-grid");
@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCardWidth() {
         const card = track.querySelector(".popular-card");
-
         if (!card) return;
 
         cardWidth = card.offsetWidth + getGap();
@@ -44,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const cards = [...track.children];
 
-        // clones at beginning
+        // Add clones to beginning
         cards.slice(-cloneCount).forEach(card => {
             track.insertBefore(card.cloneNode(true), track.firstChild);
         });
 
-        // clones at end
+        // Add clones to end
         cards.slice(0, cloneCount).forEach(card => {
             track.appendChild(card.cloneNode(true));
         });
@@ -63,25 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentTranslate = -(currentIndex * cardWidth);
 
-        track.style.transition = animate ? "transform .4s ease" : "none";
+        track.style.transition = animate
+            ? "transform .4s ease"
+            : "none";
 
         track.style.transform = `translateX(${currentTranslate}px)`;
     }
 
     nextBtn.addEventListener("click", () => {
-
         currentIndex++;
-
         jump();
-
     });
 
     prevBtn.addEventListener("click", () => {
-
         currentIndex--;
-
         jump();
-
     });
 
     track.addEventListener("transitionend", () => {
@@ -108,6 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function pointerDown(e) {
 
+        if (e.button !== undefined && e.button !== 0) return;
+
         isDragging = true;
 
         startX = e.clientX;
@@ -117,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
         track.style.transition = "none";
 
         track.classList.add("dragging");
-
     }
 
     function pointerMove(e) {
@@ -129,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTranslate = previousTranslate + delta;
 
         track.style.transform = `translateX(${currentTranslate}px)`;
-
     }
 
     function pointerUp() {
@@ -143,25 +138,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const moved = currentTranslate - previousTranslate;
 
         if (moved < -80) {
-
             currentIndex++;
-
         } else if (moved > 80) {
-
             currentIndex--;
-
         }
 
         jump();
-
     }
 
     viewport.addEventListener("pointerdown", pointerDown);
-
     window.addEventListener("pointermove", pointerMove);
-
     window.addEventListener("pointerup", pointerUp);
-
     window.addEventListener("pointercancel", pointerUp);
 
     let resizeTimer;
@@ -179,5 +166,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     buildSlider();
-
-});
+}

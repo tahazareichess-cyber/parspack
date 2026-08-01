@@ -1,9 +1,10 @@
 .most-popular{
     margin-top:100px;
+    margin-bottom:50px;
 }
 
 .popular-wrapper{
-    max-width:1200px;
+    max-width:1300px;
     width:100%;
     margin:auto;
     overflow:hidden;
@@ -68,7 +69,7 @@
 
 
 .card-image img{
-    max-width:80%;
+    width:300px;
     max-height:150px;
     object-fit:contain;
     user-select:none;
