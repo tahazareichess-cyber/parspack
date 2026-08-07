@@ -7,31 +7,80 @@ async function loadComponent(id, file) {
         }
 
         const html = await response.text();
-        document.getElementById(id).innerHTML = html;
+
+        const element = document.getElementById(id);
+
+        if (element) {
+            element.innerHTML = html;
+        }
+
     } catch (error) {
         console.error(error);
     }
 }
 
+
 async function loadPage() {
-    // Load all components
-    await loadComponent("navbar", "html/navbar.html");
-    await loadComponent("hero", "hero/hero.html");
-    await loadComponent("popular", "html/popular.html");
-    await loadComponent("host-server", "html/host-server.html");
-    await loadComponent("banner-cdn", "html/banner-cdn.html");
-    await loadComponent("locations","html/locations.html");
 
-    // Initialize JavaScript after everything is loaded
-    if (typeof initNavbar === "function") initNavbar();
-    if (typeof initHeroCarousel === "function") initHeroCarousel();
-    if (typeof initPopularSlider === "function") initPopularSlider();
-    if (typeof initServerHostSlider === "function") initServerHostSlider();
-    if (typeof initBannerCdn === "function") initBannerCdn();
+    const components = [
+        ["navbar", "html/navbar.html"],
+        ["hero", "hero/hero.html"],
+        ["popular", "html/popular.html"],
+        ["host-server", "html/host-server.html"],
+        ["banner-cdn", "html/banner-cdn.html"],
+        ["locations", "html/locations.html"],
+        ["pass-banner", "html/pass-banner.html"],
+        ["why", "html/why.html"],
+        ["free-banner", "html/free-banner.html"],
+        ["backup", "html/backup.html"],
+        ["comment", "html/comment.html"],
+        ["backup-types", "html/backup-types.html"],
+        ["free-server-banner", "html/free-server-banner.html"],
+        ["last-report" , "html/last-report.html"],
+        ["footer", "html/footer.html"]
+    ];
 
-    initLocationsCarousel();
-    
+
+    // Load all html components
+    await Promise.all(
+        components.map(component =>
+            loadComponent(component[0], component[1])
+        )
+    );
+
+
+    // Initialize scripts safely
+
+    const functions = [
+        "initNavbar",
+        "initHeroCarousel",
+        "initPopularSlider",
+        "initServerHostSlider",
+        "initBannerCdn",
+        "initLocationsCarousel",
+        "initpassbanner",
+        "initwhy",
+        "initfree",
+        "initbackup",
+        "initCommentCarousel",
+        "initbackupTypes",
+        "initfreeServerBanner",
+        "initLastreport",
+        "initfooter"
+    ];
+
+
+    functions.forEach(func => {
+
+        if (typeof window[func] === "function") {
+            window[func]();
+        }
+
+    });
+
+
 }
 
-// Start the page
+
+// Start
 loadPage();

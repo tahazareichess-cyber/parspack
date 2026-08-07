@@ -1,0 +1,65 @@
+.backup-types-container{
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    margin-top:60px;
+    margin-bottom:50px;
+}
+.backup-types-header{
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+.backup-types-header h2{
+    margin-bottom:10px;
+}
+.backup-types-cards{
+    width:90%;
+    display:flex;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:20px;
+    margin:0 auto;
+}
+.backup-types-card{
+    width:100%;
+    max-width:600px;
+    background:rgb(255, 255, 255);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    height:auto;
+    flex-direction:column;
+    border:solid 2px gray;
+    border-radius:20px;
+    padding:10px;
+}
+.backup-types-card ion-icon{
+    background-color:white;
+    font-size: 40px;
+    margin-top:30px;
+    color:rgb(25, 25, 110);
+    padding:4px;
+    border-radius:10px;
+    transition:1s;
+}
+.backup-types-card p{
+    margin-bottom:30px;
+    font-weight:300;
+}
+.backup-types-card{
+    transition:.3s ease;
+}
+.backup-types-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+.backup-types-card:hover .backup-types-icon ion-icon{
+    background-color:rgba(144, 223, 243, 0.815);
+}
+@media (max-width:767px){
+    .backup-types-cards{
+        display:grid;
+    }
+}

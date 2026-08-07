@@ -1,0 +1,233 @@
+.why{
+    display:flex;
+    align-items:flex-start;
+    justify-content: center;
+    background-color:white;
+    margin-top:70px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right:50px;
+    border-radius:20px;
+    padding:40px;
+    gap:40px;
+
+}
+.why-header{
+    margin-right:20px;
+}
+.why-header h2{
+    font-weight: 700;
+}
+.why-header p{
+    margin-top: 10px;
+    width:90%;
+}
+.why-cards{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+    margin-top: 30px;
+    margin-left:30px;
+    margin-bottom: 30px;
+}
+
+
+.why-card{
+    background:rgb(247, 246, 246);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    width:300px;
+    transition:1s;
+}
+.why-card img{
+    background-color:white;
+    border-radius: 10px;
+    width:80px;
+    max-width:100%;
+    height:auto;
+    transition:1s;
+}
+.why-card:hover  img{
+    background:rgba(5, 173, 252, 0.644);
+}   
+.why-card:hover {
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transform:translateY(-6px);
+}
+.why-header p,
+.why-card p{
+    line-height:1.8;
+}
+/* ===========================
+   TABLET (768px - 991px)
+=========================== */
+
+@media (max-width:991px){
+
+    .why{
+        flex-direction:column;
+        align-items:center;
+
+        margin:50px 20px;
+        padding:35px;
+    }
+
+    .why-header{
+        margin-right:0;
+        text-align:center;
+        width:100%;
+    }
+
+    .why-header img{
+        width:100%;
+        height:auto;
+    }
+
+    .why-header p{
+        width:100%;
+        margin-top:15px;
+        line-height:1.8;
+        display:none;
+    }
+    .why-header h2{
+        width:100%;
+        margin-top:15px;
+        line-height:1.8;
+        display:none;
+    }
+
+    .why-cards{
+        width:100%;
+        margin:30px 0 0;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .why-card{
+        width:100%;
+    }
+
+    .why-card img{
+        width:80px;
+    }
+
+}
+
+
+/* ===========================
+   MOBILE (0px - 767px)
+=========================== */
+
+@media (max-width:767px){
+
+    .why{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        margin:40px 10px;
+
+        padding:25px;
+    }
+
+    .why-header{
+
+        text-align:center;
+
+        margin-right:0;
+    }
+
+    .why-header img{
+
+        width:140px;
+
+        height:auto;
+    }
+
+    .why-header h2{
+        display:none;
+        font-size:28px;
+    }
+
+    .why-header p{
+
+        width:100%;
+
+        display:none;
+        font-size:15px;
+
+        line-height:1.9;
+    }
+
+    .why-cards{
+
+        width:100%;
+
+        margin:25px 0 0;
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .why-card{
+
+        width:100%;
+
+        padding:20px;
+    }
+
+    .why-card img{
+
+        width:70px;
+    }
+
+    .why-card h3{
+
+        font-size:20px;
+    }
+
+    .why-card p{
+
+        font-size:14px;
+
+        line-height:1.8;
+    }
+
+}
+
+
+/* ===========================
+   SMALL MOBILE (0px - 400px)
+=========================== */
+
+@media (max-width:400px){
+
+    .why{
+
+        padding:20px 15px;
+    }
+
+    .why-header h2{
+
+        font-size:24px;
+    }
+
+    .why-header p{
+
+        font-size:14px;
+    }
+
+    .why-card{
+
+        padding:18px;
+    }
+
+    .why-card img{
+
+        width:60px;
+    }
+
+}
