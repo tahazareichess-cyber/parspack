@@ -79,7 +79,7 @@
 
 /* Carousel Wrapper - Critical for hiding overflow */
 .last-report-carousel-wrapper {
-    width: 80%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -88,8 +88,9 @@
 
 .last-report-cards {
     display: flex;
+    justify-content:center;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: grab;
     width: 100%;
@@ -110,7 +111,7 @@
     padding: 20px;
     border: solid 2px rgba(128, 128, 128, 0.15);
     flex: 0 0 calc(33.333% - 17px);
-    min-width: 280px;
+    min-width: 380px;
     transition: all 0.3s ease;
 }
 

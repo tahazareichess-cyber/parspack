@@ -1,182 +1,84 @@
-function initLocationsCarousel(){
-
+function initLocationsCarousel() {
     const slider = document.querySelector(".location-cards");
     const cards = document.querySelectorAll(".location-card");
 
-    if(!slider || cards.length === 0) return;
-
+    if (!slider || cards.length === 0) return;
 
     let isDragging = false;
-
     let startX = 0;
+    let startScrollLeft = 0;
+    let autoTimer = null;
 
-    let scrollLeft = 0;
+    const getStep = () => {
+        const card = cards[0];
+        const cardStyles = getComputedStyle(card);
+        const marginLeft = parseFloat(cardStyles.marginLeft) || 0;
+        const marginRight = parseFloat(cardStyles.marginRight) || 0;
 
-    let autoTimer;
+        return card.offsetWidth + marginLeft + marginRight;
+    };
 
+    const stopAuto = () => {
+        if (autoTimer) {
+            clearInterval(autoTimer);
+            autoTimer = null;
+        }
+    };
 
-    // ======================
-    // DRAG START
-    // ======================
-
-    slider.addEventListener("mousedown", (e)=>{
-
-        isDragging = true;
-
-        startX = e.pageX - slider.offsetLeft;
-
-        scrollLeft = slider.scrollLeft;
-
+    const startAuto = () => {
         stopAuto();
+        autoTimer = setInterval(() => {
+            if (isDragging) return;
 
-    });
+            const step = getStep();
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
+            const next = Math.min(slider.scrollLeft + step, maxScroll);
 
+            slider.scrollTo({
+                left: next,
+                behavior: "smooth"
+            });
+        }, 15000);
+    };
 
-
-    slider.addEventListener("mouseleave", ()=>{
-
+    const endDrag = () => {
         isDragging = false;
-
+        slider.classList.remove("is-dragging");
         startAuto();
+    };
 
+    slider.addEventListener("pointerdown", (e) => {
+        isDragging = true;
+        slider.classList.add("is-dragging");
+
+        startX = e.pageX;
+        startScrollLeft = slider.scrollLeft;
+
+        slider.setPointerCapture(e.pointerId);
+        stopAuto();
     });
 
-
-
-    slider.addEventListener("mouseup", ()=>{
-
-        isDragging = false;
-
-        startAuto();
-
-    });
-
-
-
-    slider.addEventListener("mousemove",(e)=>{
-
-        if(!isDragging) return;
-
+    slider.addEventListener("pointermove", (e) => {
+        if (!isDragging) return;
 
         e.preventDefault();
 
-
-        const x = e.pageX - slider.offsetLeft;
-
-
-        const walk = (x - startX) * 1.2;
-
-
-        slider.scrollLeft = scrollLeft - walk;
-
+        const walk = (e.pageX - startX) * 1.2;
+        slider.scrollLeft = startScrollLeft - walk;
     });
 
-
-
-    // ======================
-    // TOUCH SUPPORT
-    // ======================
-
-
-    slider.addEventListener("touchstart",(e)=>{
-
-        isDragging = true;
-
-        startX = e.touches[0].pageX;
-
-        scrollLeft = slider.scrollLeft;
-
-        stopAuto();
-
+    slider.addEventListener("pointerup", endDrag);
+    slider.addEventListener("pointercancel", endDrag);
+    slider.addEventListener("pointerleave", () => {
+        if (isDragging) endDrag();
     });
 
-
-
-    slider.addEventListener("touchmove",(e)=>{
-
-        if(!isDragging) return;
-
-
-        const x = e.touches[0].pageX;
-
-
-        const walk = (x - startX) * 1.2;
-
-
-        slider.scrollLeft = scrollLeft - walk;
-
+    slider.addEventListener("mouseenter", stopAuto);
+    slider.addEventListener("mouseleave", () => {
+        if (!isDragging) startAuto();
     });
-
-
-
-    slider.addEventListener("touchend",()=>{
-
-        isDragging = false;
-
-        startAuto();
-
-    });
-
-
-
-    // ======================
-    // 15 SECOND AUTO MOVE
-    // ======================
-
-
-    function autoSlide(){
-
-
-        const cardWidth =
-        cards[0].offsetWidth + 30;
-
-
-        const maxScroll =
-        slider.scrollWidth - slider.clientWidth;
-
-
-
-        if(slider.scrollLeft >= maxScroll){
-
-            // stop at end
-            slider.scrollLeft = maxScroll;
-
-            return;
-
-        }
-
-
-
-        slider.scrollBy({
-
-            left: cardWidth,
-
-            behavior:"smooth"
-
-        });
-
-    }
-
-
-
-    function startAuto(){
-
-        stopAuto();
-
-        autoTimer = setInterval(autoSlide,15000);
-
-    }
-
-
-
-    function stopAuto(){
-
-        clearInterval(autoTimer);
-
-    }
-
-
 
     startAuto();
-
 }
+
+document.addEventListener("DOMContentLoaded", initLocationsCarousel);
